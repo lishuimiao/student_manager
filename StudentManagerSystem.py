@@ -47,7 +47,6 @@ def select_student():
     print('找不到该学员信息')
 
 
-
 def show_all():
     for i in student_info:
         print(f"{i['id']}")
