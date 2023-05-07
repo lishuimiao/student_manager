@@ -21,12 +21,15 @@
             面积
 添加家具流程：
     1.使用家具类实例一件家具
-    2.使用房子类实例化一个加
+    2.使用房子类实例化一个家
+    3.使用房子实例化对象调用添加家具方法，传递家具实例对象。
+        家具面积小于房屋面积添加至家具列表，减掉房屋面积
+ps:Self = 实例对象
 """
 
 
 class Furniture():
-    def __init__(self, area, name):
+    def __init__(self, name, area):
         self.name = name
         self.area = area
 
@@ -37,12 +40,15 @@ class home():
         self.area = area
         self.free_area = area
         self.Furniture_list = []
-
-    def add_Furniture(self, safa):
-        if self.free_area >= safa.area:
-            self.Furniture_list.append(safa.name)
-            self.free_area -= safa.area
-            print(self.area)
+    """
+    留意add_Furniture的形参，它并不是单指某一个对象
+    它可能是A 也可能是B,所以这里写的是item
+    """
+    def add_Furniture(self, item):
+        if self.free_area >= item.area:
+            self.Furniture_list.append(item.name)
+            self.free_area -= item.area
+            # print(self.area)
         elif safa.area > self.free_area:
             print('放不进去了')
 
@@ -53,4 +59,6 @@ class home():
 safa = Furniture(name='safa', area=10)
 my_home = home('广州', 100)
 my_home.add_Furniture(safa)
+bed = Furniture('床', 50)
+my_home.add_Furniture(bed)
 print(my_home)
