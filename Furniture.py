@@ -24,11 +24,11 @@
     2.使用房子类实例化一个家
     3.使用房子实例化对象调用添加家具方法，传递家具实例对象。
         家具面积小于房屋面积添加至家具列表，减掉房屋面积
-ps:Self = 实例对象
+ps:Self = 实例对象  self.属性 其实就是实例属性
 """
 
 
-class Furniture():
+class Furniture(object):
     def __init__(self, name, area):
         self.name = name
         self.area = area
