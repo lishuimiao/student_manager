@@ -32,4 +32,4 @@ class Sweet_Potato():
 potato = Sweet_Potato()
 potato.cook_potato(9)
 potato.add_fixing('孜然')
-print(potato)
+print(potato.fixings)
